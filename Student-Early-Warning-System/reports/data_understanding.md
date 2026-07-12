@@ -43,3 +43,13 @@ not to make real-world dropout claims.
   correlations individually (|r| < 0.2) but are retained as features, 
   since tree-based models can capture non-linear interactions that 
   correlation alone doesn't reveal.
+
+  ## Feature Engineering Summary (Phase 5)
+- Excluded GPA from features (leakage risk — GradeClass is derived from GPA bands)
+- One-hot encoded Ethnicity (nominal category, no inherent order)
+- Kept ParentalEducation and ParentalSupport as ordinal numeric (existing 
+  encoding reflects meaningful order)
+- Engineered HighAbsenceFlag (Absences > 15, roughly the dataset median) 
+  as an interpretable risk indicator for later explainability
+- Final feature count: [fill in from X.shape]
+- Saved to: data/processed/X_features.csv, data/processed/y_target.csv
