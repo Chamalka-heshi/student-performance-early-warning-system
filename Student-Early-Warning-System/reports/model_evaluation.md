@@ -17,3 +17,12 @@ students, which is not the target population for early intervention.
 Limitation: class weighting was applied to LR/Decision Tree/Random Forest 
 via class_weight='balanced', but not to the Neural Network's loss function. 
 Future work could explore weighted loss to further improve rare-class recall.
+
+## Explainability Findings (Phase 8)
+Top features driving high-risk (GradeClass 4.0) predictions, per SHAP analysis:
+1. Absences (dominant factor, consistent with EDA correlation of r=0.73)
+2. StudyTimeWeekly
+3. HighAbsenceFlag (engineered feature - confirms Phase 5 decision was well-founded)
+4. ParentalSupport
+Remaining features (Tutoring, Sports, Extracurricular, Gender, Ethnicity, etc.) 
+contribute comparatively little to risk predictions.
