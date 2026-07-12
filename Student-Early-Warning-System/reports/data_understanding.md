@@ -32,3 +32,14 @@ not to make real-world dropout claims.
   and evaluated using per-class precision/recall/F1, not accuracy alone.
 - Final cleaned shape: 2392 rows x 14 columns
 - Saved to: data/processed/students_cleaned.csv
+
+## Correlation Findings (Phase 4)
+- Absences shows the strongest relationship with academic outcomes 
+  (r=-0.92 with GPA, r=0.73 with GradeClass) — by far the dominant signal.
+- GPA correlates strongly with GradeClass (r=-0.78), as expected since 
+  GradeClass is derived from GPA bands — GPA will be EXCLUDED as a model 
+  input to avoid leakage; only behavioral/demographic features will be used.
+- StudyTimeWeekly, Tutoring, and ParentalSupport show only weak linear 
+  correlations individually (|r| < 0.2) but are retained as features, 
+  since tree-based models can capture non-linear interactions that 
+  correlation alone doesn't reveal.
