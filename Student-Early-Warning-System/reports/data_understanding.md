@@ -19,3 +19,16 @@ not to make real-world dropout claims.
 - [fill in: any missing values found?]
 - [fill in: is GradeClass balanced or imbalanced?]
 - [fill in: any surprising ranges in Absences / StudyTimeWeekly / GPA?]
+
+## Cleaning Summary (Phase 3)
+- Dropped StudentID (identifier, no predictive value)
+- Missing values: none found across all 15 columns
+- Duplicates: [fill in from Step 2]
+- Value ranges verified against documentation: Age (15-18), Absences (0-29), 
+  StudyTimeWeekly (0-20), GPA (0.0-4.0) — all within expected bounds
+- Class imbalance identified in target (GradeClass): class 4.0 (lowest 
+  performance) represents 50.6% of students, class 0.0 (highest) only 4.5%.
+  This will be addressed during modeling (Phase 6) via class weighting 
+  and evaluated using per-class precision/recall/F1, not accuracy alone.
+- Final cleaned shape: 2392 rows x 14 columns
+- Saved to: data/processed/students_cleaned.csv
